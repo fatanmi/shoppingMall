@@ -5,6 +5,12 @@ import 'recommendedPlantCard.dart';
 import 'titleWithButtonLeft.dart';
 
 class Body extends StatelessWidget {
+  void selectDetailsScreen(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(
+      "/details-Screen",
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -25,22 +31,22 @@ class Body extends StatelessWidget {
                   RecommendedPlantCard(
                     title: "flower",
                     imageUrl: "assets/images/image_1.png",
-                    press: (){},
+                    press: () {},
                   ),
                   RecommendedPlantCard(
                     title: "Samantha",
                     imageUrl: "assets/images/image_2.png",
-                     press: (){},
+                    press: () {},
                   ),
                   RecommendedPlantCard(
                     title: "Angelica",
                     imageUrl: "assets/images/image_3.png",
-                     press: (){},
+                    press: () {},
                   ),
                   RecommendedPlantCard(
                     title: "Russia",
                     imageUrl: "assets/images/image_1.png",
-                     press: (){},
+                    press: () {},
                   ),
                 ],
               ),
@@ -50,13 +56,16 @@ class Body extends StatelessWidget {
             size: size,
             text: "Featured Plants",
           ),
-
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                FeaturedPlantCard(imageUrl:"assets/images/bottom_img_1.png" ,),
-                FeaturedPlantCard(imageUrl: "assets/images/bottom_img_2.png",),
+                FeaturedPlantCard(
+                  imageUrl: "assets/images/bottom_img_1.png",
+                ),
+                FeaturedPlantCard(
+                  imageUrl: "assets/images/bottom_img_2.png",
+                ),
               ],
             ),
           ),

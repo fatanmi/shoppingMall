@@ -13,6 +13,16 @@ class RecommendedPlantCard extends StatelessWidget {
   final String title;
   final Function press;
 
+  void selectDetailsScreen(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(
+      "/details-Screen",
+      arguments: {
+        "title": title,
+        "imageUrl": imageUrl,
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -34,10 +44,9 @@ class RecommendedPlantCard extends StatelessWidget {
                     topRight: Radius.circular(15),
                   ),
                   child: InkWell(
-                    borderRadius: BorderRadius.circular(10),
-                    onTap: () {},
-                    splashColor:
-                        Theme.of(context).accentColor.withOpacity(0.9),
+                    // borderRadius: BorderRadius.circular(15),
+                    onTap: () => selectDetailsScreen(context),
+                    splashColor: Theme.of(context).accentColor.withOpacity(0.9),
                     child: Image.asset(
                       imageUrl,
                       width: size.width * 0.4,
